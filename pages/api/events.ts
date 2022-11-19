@@ -69,9 +69,8 @@ const calendarEventsHandler = async (
 
         res.setHeader('Cache-Control', 'no-cache')
         res.setHeader('X-Cache', 'MISS')
-        // res.setHeader('Content-Type', 'application/json')
-        // res.json(calendar)
         res.setHeader('Content-Type', 'text/calendar')
+
         res.send(calendar)
     } catch (error) {
         console.log(error)

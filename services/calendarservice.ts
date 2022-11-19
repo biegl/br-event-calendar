@@ -20,7 +20,7 @@ export class CalendarService {
                 return
             }
 
-            resolve(value)
+            resolve(value?.trim())
         })
     }
 }

@@ -38,10 +38,15 @@ export class EventService {
             let id = event.id.toString()
 
             let calEvent: ICalendarEvent = {
+                productId: 'br-event-calendar',
                 title: event.titel.trim(),
                 description: this.createDescription(event),
                 start: convertDatestring(event.beginn),
+                startInputType: 'utc',
+                startOutputType: 'utc',
                 end: convertDatestring(event.ende),
+                endInputType: 'utc',
+                endOutputType: 'utc',
                 location: event.ort.trim() || '',
                 uid: id,
                 created: convertDatestring(event.created_at),

@@ -5,10 +5,15 @@ export interface IAlarm {
 }
 
 export interface ICalendarEvent {
+    productId: string
     title: string
     description: string
     start: Array<number>
+    startInputType: string
+    startOutputType: string
     end: Array<number>
+    endInputType: string
+    endOutputType: string
     location: string
     uid: string
     created: Array<number>
