@@ -7,9 +7,9 @@ const cors = Cors({
     methods: ['GET', 'HEAD'],
 })
 
-import { ApiClient } from '../services/apiclient'
-import { EventService } from '../services/eventservice'
-import { CalendarService } from '../services/calendarservice'
+import { ApiClient } from '../../services/apiclient'
+import { EventService } from '../../services/eventservice'
+import { CalendarService } from '../../services/calendarservice'
 import { runMiddleware, cache, ICachedRequest } from '../../utils/middleware'
 import getConfig from 'next/config'
 

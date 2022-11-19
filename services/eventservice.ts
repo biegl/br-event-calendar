@@ -1,7 +1,7 @@
 import { ApiClient } from './apiclient'
 import { IEvent } from '../models/event'
 import { ICalendarEvent } from '../models/calendarevent'
-import { convertDatestring, stripHtmlTags } from '../../utils/helper'
+import { convertDatestring, stripHtmlTags } from '../utils/helper'
 import getConfig from 'next/config'
 
 const {
