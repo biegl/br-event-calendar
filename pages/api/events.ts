@@ -12,6 +12,7 @@ import { EventService } from '../../services/eventservice'
 import { CalendarService } from '../../services/calendarservice'
 import { runMiddleware, cache, ICachedRequest } from '../../utils/middleware'
 import getConfig from 'next/config'
+import { ErrorReporter } from '../../services/errorreporter'
 
 const {
     publicRuntimeConfig: {
@@ -72,8 +73,8 @@ const calendarEventsHandler = async (
         res.setHeader('Content-Type', 'text/calendar')
 
         res.send(calendar)
-    } catch (error) {
-        console.log(error)
+    } catch (error: any) {
+        ErrorReporter.report(error)
         res.status(500)
     }
 }
