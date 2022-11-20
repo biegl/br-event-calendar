@@ -1,10 +1,11 @@
-import Ajv from 'ajv'
+import Ajv, { JSONSchemaType } from 'ajv'
+import { IEvent } from '../models/event'
 
 const ajv = new Ajv({
     allErrors: true,
 })
 
-const schema = {
+const schema: JSONSchemaType<IEvent> = {
     type: 'object',
     properties: {
         id: { type: 'integer' },
@@ -15,7 +16,7 @@ const schema = {
         ort: { type: 'string' },
         created_at: { type: 'string' },
         typ: { type: 'string' },
-        anmeldeschluss: { type: 'string' },
+        anmeldeschluss: { type: 'string', nullable: true },
     },
     required: [
         'id',
@@ -26,7 +27,6 @@ const schema = {
         'ort',
         'created_at',
         'typ',
-        'anmeldeschluss',
     ],
     additionalProperties: true,
 }
