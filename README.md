@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4984e60d-c7e6-42a9-9af2-c690559ba2a0/deploy-status)](https://app.netlify.com/sites/lucent-torte-0263eb/deploys)
 
 ## Development
 
@@ -15,12 +15,12 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## TODO:
 
-[?] Handle pagination
-Currently does not handle pagination correctly and returns 100 records at maximum. If the total exceeds 100 records meta.total returns null. The solution for now is to use descending sorting and return only the last 100 records.
-[x] Filter: Return only events that are not of type `Pistenrettung`
-[] schema validation
-[x] Add link to event detail page
-[x] Set environment variables
-[] Report and collect errors centrally
-[] Add tests
-[x] caching
+-   [] Handle pagination
+    Currently does not handle pagination correctly and returns 100 records at maximum. If the total exceeds 100 records meta.total returns null. The solution for now is to use descending sorting and return only the last 100 records.
+-   [x] Filter: Return only events that are not of type `Pistenrettung`
+-   [] Add schema validation
+-   [x] Add link to event detail page
+-   [x] Set environment variables
+-   [x] Report and collect errors centrally
+-   [] Add tests
+-   [x] Add request caching
