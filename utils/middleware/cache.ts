@@ -9,8 +9,7 @@ const {
 const context = {
     cache: new LRU({
         max: CACHE_MAX_SIZE,
-        // ttl: CACHE_MAX_AGE_IN_S * 1000,
-        ttl: 1 * 1000,
+        ttl: CACHE_MAX_AGE_IN_S * 1000,
     }),
 }
 

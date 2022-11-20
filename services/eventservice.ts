@@ -3,6 +3,9 @@ import { IEvent } from '../models/event'
 import { ICalendarEvent } from '../models/calendarevent'
 import { convertDatestring, stripHtmlTags } from '../utils/helper'
 import getConfig from 'next/config'
+import { validate } from './validation'
+import { ErrorReporter } from './errorreporter'
+import { ValidationError } from '../utils/errors'
 
 const {
     publicRuntimeConfig: { API_BASE_URL },
@@ -23,6 +26,16 @@ export class EventService {
             this.apiClient
                 .get('/veranstaltung', { params })
                 .then((data: any) => {
+                    // Validate incoming data
+                    if (!validate(data)) {
+                        const errorMessages =
+                            validate.errors
+                                ?.map((err) => err.message)
+                                .join(';') || ''
+
+                        ErrorReporter.report(new ValidationError(errorMessages))
+                    }
+
                     let events = this.sanitizeData(data)
                     resolve(events)
                 })
